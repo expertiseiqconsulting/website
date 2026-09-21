@@ -133,12 +133,14 @@
   .cta-band .cta-btn{font-size:1rem;padding:13px 26px;}
 
   /* Réalisations */
-  .real-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;}
-  @media (max-width:700px){.real-grid{grid-template-columns:1fr;}}
+  .real-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  @media (max-width:900px){.real-grid{grid-template-columns:1fr;}}
   .real-card{background:var(--card-bg);border:1px solid var(--border);border-radius:10px;padding:26px;}
   .real-card .tag{display:inline-block;font-size:0.78rem;font-weight:600;color:var(--blue);background:rgba(35,78,219,.08);padding:4px 10px;border-radius:20px;margin-bottom:14px;}
-  .real-card h3{font-size:1.1rem;margin-bottom:8px;font-family:'Inter';font-weight:600;}
-  .real-card p{color:var(--ink-soft);font-size:0.95rem;margin:0;}
+  .real-card h3{font-size:1.15rem;margin-bottom:14px;font-family:'Inter';font-weight:600;}
+  .real-card p{color:var(--ink-soft);font-size:0.9rem;margin:0 0 12px;}
+  .real-card p:last-child{margin-bottom:0;}
+  .real-card p strong{color:var(--ink);}
 
   /* À propos : expertise + pourquoi */
   .expertise-block p.lead-text{color:var(--ink-soft);font-size:1.03rem;max-width:70ch;}
@@ -150,7 +152,28 @@
   .why-card h3{font-size:1.1rem;margin-bottom:8px;font-family:'Inter';font-weight:600;color:var(--ink);}
   .why-card p{color:var(--ink-soft);font-size:0.95rem;margin:0;}
 
-  /* Contact */
+  /* Vous vous reconnaissez ? */
+  .quote-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  @media (max-width:820px){.quote-grid{grid-template-columns:1fr 1fr;}}
+  @media (max-width:560px){.quote-grid{grid-template-columns:1fr;}}
+  .quote-grid blockquote{
+    margin:0;padding:22px 20px;background:var(--bg-alt);border:1px solid var(--border);border-radius:10px;
+    font-style:italic;color:var(--ink);font-size:0.98rem;line-height:1.5;
+  }
+
+  /* Offre mise en avant (diagnostic) */
+  .offer-featured{border-color:var(--blue);border-width:2px;position:relative;background:var(--bg);}
+  .offer-badge{
+    display:inline-block;background:var(--blue);color:#fff;font-size:0.72rem;font-weight:600;
+    text-transform:uppercase;letter-spacing:0.05em;padding:4px 10px;border-radius:20px;margin-bottom:14px;
+  }
+  .offer-checklist{list-style:none;padding:0;margin:0 0 20px;display:flex;flex-direction:column;gap:8px;flex-grow:1;}
+  .offer-checklist li{
+    font-size:0.92rem;color:var(--ink-soft);padding-left:24px;position:relative;
+  }
+  .offer-checklist li::before{
+    content:"✓";position:absolute;left:0;color:var(--blue);font-weight:700;
+  }
   .contact-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:56px;}
   @media (max-width:860px){.contact-grid{grid-template-columns:1fr;}}
   .contact-info h2{font-size:clamp(1.7rem,3vw,2.2rem);}
@@ -250,10 +273,11 @@
     <nav class="main-nav" id="main-nav">
       <a href="#services">Services</a>
       <a href="#methode">Notre méthode</a>
+      <a href="#realisations">Réalisations</a>
       <a href="#a-propos">À propos</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#contact" class="cta-btn desktop-only">Échanger sur votre projet</a>
+    <a href="#contact" class="cta-btn desktop-only">Parlons de votre projet</a>
     <button class="nav-toggle" id="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
     </button>
@@ -267,7 +291,7 @@
       <h1>Structurez votre entreprise. Automatisez vos processus. <span class="accent">Développez vos outils.</span></h1>
       <p class="lead">Nous accompagnons les PME d'Île-de-France, du Grand Est et de toute la France dans leur transformation numérique.</p>
       <div class="actions">
-        <a href="#contact" class="cta-btn">Échanger sur votre projet</a>
+        <a href="#contact" class="cta-btn">Parlons de votre projet</a>
         <a href="#services" class="secondary-link">Découvrir nos services</a>
       </div>
     </div>
@@ -282,6 +306,23 @@
         <p>Nous vous accompagnons pour identifier ces points de blocage et mettre en place des solutions adaptées à votre fonctionnement.</p>
       </div>
       <p class="pillars-note">Notre objectif : vous faire gagner du temps, fiabiliser vos processus et vous donner les outils nécessaires pour accompagner votre développement.</p>
+    </div>
+  </section>
+
+  <!-- Vous vous reconnaissez ? -->
+  <section id="reconnaissez">
+    <div class="wrap">
+      <div class="section-head center" style="max-width:50ch;">
+        <h2>Vous vous reconnaissez ?</h2>
+      </div>
+      <div class="quote-grid">
+        <blockquote>« Nous avons trop de fichiers Excel. »</blockquote>
+        <blockquote>« Nous ressaisissons les mêmes informations plusieurs fois. »</blockquote>
+        <blockquote>« Nos logiciels ne communiquent pas entre eux. »</blockquote>
+        <blockquote>« Nous dépendons d'une seule personne pour certaines tâches. »</blockquote>
+        <blockquote>« Nos reportings prennent plusieurs jours. »</blockquote>
+        <blockquote>« Nous avons grandi mais nos outils n'ont pas suivi. »</blockquote>
+      </div>
     </div>
   </section>
 
@@ -322,36 +363,45 @@
     </div>
   </section>
 
+
   <!-- Nos services -->
   <section class="alt" id="services">
     <div class="wrap">
       <div class="section-head">
         <h2>Nos services</h2>
+        <p>Le diagnostic est le point de départ naturel : il permet de savoir précisément par où commencer avant d'engager tout accompagnement.</p>
       </div>
       <div class="offer-grid">
-        <div class="offer-card">
+        <div class="offer-card offer-featured">
+          <span class="offer-badge">Par où commencer</span>
           <h3>Diagnostic numérique PME</h3>
-          <p class="offer-tagline">Prenez du recul sur votre organisation et identifiez vos priorités.</p>
-          <p class="offer-desc">Nous analysons vos processus, vos outils, vos données et vos méthodes de travail afin d'identifier les points de friction et les opportunités d'amélioration.</p>
-          <a href="#contact" class="cta-btn offer-cta">Découvrir le diagnostic</a>
+          <p class="offer-tagline">Identifiez vos points de blocage et construisez votre feuille de route numérique.</p>
+          <ul class="offer-checklist">
+            <li>Analyse des processus</li>
+            <li>Analyse des outils</li>
+            <li>Identification des points de blocage</li>
+            <li>Recommandations</li>
+            <li>Feuille de route à 12 mois</li>
+          </ul>
+          <a href="#contact" class="cta-btn offer-cta">Parlons de votre projet</a>
         </div>
         <div class="offer-card">
           <h3>Structuration &amp; transformation</h3>
           <p class="offer-tagline">Faites évoluer vos processus et vos outils pour gagner en efficacité.</p>
           <p class="offer-desc">Automatisation, intégration d'outils, Microsoft 365, SharePoint, Power Platform, développement d'applications métiers, bases de données et solutions adaptées à votre organisation.</p>
-          <a href="#contact" class="cta-btn offer-cta">Découvrir l'accompagnement</a>
+          <a href="#contact" class="cta-btn offer-cta">Parlons de votre projet</a>
         </div>
         <div class="offer-card">
           <h3>Data &amp; pilotage</h3>
           <p class="offer-tagline">Transformez vos données en informations utiles pour piloter votre activité.</p>
           <p class="offer-desc">Centralisation des données, automatisation du reporting, indicateurs, tableaux de bord, Excel, SQL et Power BI.</p>
-          <a href="#contact" class="cta-btn offer-cta">Découvrir Data &amp; pilotage</a>
+          <a href="#contact" class="cta-btn offer-cta">Parlons de votre projet</a>
         </div>
         <div class="offer-card">
           <h3>Collaboration &amp; organisation</h3>
           <p class="offer-tagline">Renforcez la collaboration et la circulation de l'information entre vos équipes.</p>
           <p class="offer-desc">Mise en place d'espaces de travail partagés, d'outils de communication et de bonnes pratiques pour fluidifier les échanges au sein de votre entreprise (Microsoft Teams, SharePoint, intranet collaboratif).</p>
-          <a href="#contact" class="cta-btn offer-cta">Découvrir cet accompagnement</a>
+          <a href="#contact" class="cta-btn offer-cta">Parlons de votre projet</a>
         </div>
       </div>
     </div>
@@ -368,8 +418,38 @@
     </div>
   </section>
 
+  <!-- Résultats concrets / Réalisations -->
+  <section class="alt" id="realisations">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Des résultats concrets</h2>
+        <p>Quelques transformations menées avec des PME et des organisations multi-sites.</p>
+      </div>
+      <div class="real-grid">
+        <div class="real-card">
+          <h3>Automatisation du reporting</h3>
+          <p><strong>Problème.</strong> Un processus de reporting reposait sur de nombreux fichiers Excel, avec des temps de traitement importants, des erreurs et des règles de calcul hétérogènes.</p>
+          <p><strong>Solution.</strong> Structuration des données, automatisation des traitements et mise en place de rapports Power BI.</p>
+          <p><strong>Résultat.</strong> Préparation passée d'environ la moitié du mois à quelques heures, avec 15 rapports et 30 KPI.</p>
+        </div>
+        <div class="real-card">
+          <h3>Centralisation des données</h3>
+          <p><strong>Problème.</strong> Une organisation de 60 établissements consolidait manuellement des données issues de plusieurs ERP, fichiers Excel et exports CSV.</p>
+          <p><strong>Solution.</strong> Création d'une base de données commune et automatisation des flux.</p>
+          <p><strong>Résultat.</strong> Environ 10 jours de travail économisés chaque mois pour une personne et un reporting financier centralisé.</p>
+        </div>
+        <div class="real-card">
+          <h3>Transformation numérique d'une PME</h3>
+          <p><strong>Problème.</strong> Une PME en croissance travaillait avec un serveur local, des fichiers dispersés et des échanges principalement par e-mail.</p>
+          <p><strong>Solution.</strong> Déploiement de Microsoft 365, SharePoint, OneDrive, Teams, automatisations et d'un ERP métier.</p>
+          <p><strong>Résultat.</strong> Documents accessibles partout, travail collaboratif, développement du télétravail et meilleur suivi de l'activité.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Notre méthode -->
-  <section class="alt" id="methode">
+  <section id="methode">
     <div class="wrap">
       <div class="section-head">
         <h2>Notre méthode</h2>
@@ -399,11 +479,19 @@
     </div>
   </section>
 
-  <!-- À propos : expertise + pourquoi -->
+  <!-- À propos : parcours + expertise + pourquoi -->
   <section class="alt" id="a-propos">
     <div class="wrap">
-      <div class="expertise-block">
+      <div class="founder-block">
         <div class="section-head" style="max-width:56ch;">
+          <h2>Derrière ExpertiseIQ</h2>
+        </div>
+        <p class="lead-text">ExpertiseIQ est porté par Antoine Cuisinier. Un parcours qui va du génie informatique au développement, puis à l'analyse de données et à l'écosystème Microsoft 365 — avant de se spécialiser dans la structuration numérique des PME.</p>
+        <p class="lead-text">Cette double compétence, technique et fonctionnelle, change ce qu'on peut vous proposer : comprendre vos processus métier, savoir coder une solution quand il en faut une, et exploiter vos données pour en tirer des indicateurs utiles — sans dépendre d'un prestataire différent à chaque étape.</p>
+      </div>
+
+      <div class="expertise-block">
+        <div class="section-head" style="max-width:56ch;margin-top:44px;">
           <h2>Une expertise à la croisée du métier, de la technologie et de la donnée</h2>
         </div>
         <p class="lead-text">ExpertiseIQ associe compréhension des processus, développement informatique, automatisation et analyse des données pour construire des solutions adaptées aux réalités des PME.</p>
@@ -427,7 +515,7 @@
       <h2>Vous avez grandi. Vos outils doivent suivre.</h2>
       <p class="lede">Parlons-en.</p>
       <p class="copy">Un premier échange nous permettra de comprendre votre situation et de déterminer si un diagnostic ou un accompagnement est pertinent.</p>
-      <a href="#contact" class="cta-btn">Prendre contact</a>
+      <a href="#contact" class="cta-btn">Parlons de votre projet</a>
     </div>
   </section>
 
@@ -486,15 +574,6 @@
           <button type="submit" class="cta-btn">Envoyer ma demande</button>
           <div class="form-msg" id="form-msg"></div>
         </form>
-
-        <!-- Formulaire technique invisible : relaie les données vers Google Forms -->
-        <form id="gform-proxy" action="https://docs.google.com/forms/d/e/1FAIpQLSf4YG3klmZ-7NNsOmzLryHdm2mBw9Yza00c9cT443jMdPbPNg/formResponse" method="POST" target="hidden_iframe" style="display:none;">
-          <input type="text" name="entry.1180785822" id="gf-name">
-          <input type="text" name="entry.1760718293" id="gf-email">
-          <input type="text" name="entry.1367137389" id="gf-company">
-          <textarea name="entry.1958194177" id="gf-message"></textarea>
-        </form>
-        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" title="Envoi du formulaire"></iframe>
       </div>
     </div>
   </section>
@@ -621,6 +700,7 @@
           <h4>Navigation</h4>
           <a href="#services">Services</a>
           <a href="#methode">Notre méthode</a>
+          <a href="#realisations">Réalisations</a>
           <a href="#a-propos">À propos</a>
           <a href="#contact">Contact</a>
         </div>
@@ -665,7 +745,7 @@
   });
 
   var legalRoutes = ['mentions-legales','cgu','confidentialite','cookies'];
-  var sectionIds = ['accueil','probleme','approche-intro','services','realite','methode','a-propos','cta-final','contact'];
+  var sectionIds = ['accueil','probleme','reconnaissez','approche-intro','realisations','services','realite','methode','a-propos','cta-final','contact'];
   var mainContent = document.getElementById('main-content');
   var page404 = document.getElementById('page-404');
   var legalPages = {
@@ -770,11 +850,19 @@
 
     var company = document.getElementById('f-company').value.trim();
 
-    document.getElementById('gf-name').value = name;
-    document.getElementById('gf-email').value = email;
-    document.getElementById('gf-company').value = company;
-    document.getElementById('gf-message').value = message;
-    document.getElementById('gform-proxy').submit();
+    var GFORM_URL = 'https://docs.google.com/forms/d/e/1FAIpQLSf4YG3klmZ-7NNsOmzLryHdm2mBw9Yza00c9cT443jMdPbPNg/formResponse';
+    var body = new URLSearchParams();
+    body.append('entry.1180785822', name);
+    body.append('entry.1760718293', email);
+    body.append('entry.1367137389', company);
+    body.append('entry.1958194177', message);
+
+    fetch(GFORM_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: body.toString()
+    }).catch(function(){ /* mode no-cors : la réponse n'est jamais lisible, on ignore les erreurs réseau silencieuses */ });
 
     msgEl.className = 'form-msg ok';
     msgEl.textContent = 'Merci ! Votre message a bien été envoyé, nous revenons vers vous rapidement.';
