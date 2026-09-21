@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page introuvable — ExpertiseIQ</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{ --blue:#234EDB; --gold:#D6B046; --ink:#1A1A1A; --ink-soft:#6B7280; --bg:#FFFFFF; }
+  @media (prefers-color-scheme: dark){
+    :root{ --ink:#F2F3F7; --ink-soft:#B7BBC9; --bg:#14161F; }
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;min-height:100dvh;display:flex;align-items:center;justify-content:center;
+    background:var(--bg);color:var(--ink);
+    font-family:'Inter',system-ui,sans-serif;text-align:center;padding:24px;
+    padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  h1{font-family:'Barlow Condensed';font-weight:700;font-size:clamp(3rem,10vw,5rem);color:var(--blue);margin:0;}
+  p{color:var(--ink-soft);font-size:1.05rem;margin:16px 0 32px;}
+  a{
+    background:var(--gold);color:#1A1A1A;text-decoration:none;font-weight:600;
+    padding:12px 24px;border-radius:6px;display:inline-block;
+  }
+</style>
+</head>
+<body>
+  <div>
+    <h1>404</h1>
+    <p>Cette page n'existe pas ou a été déplacée.</p>
+    <a href="/">Retour à l'accueil</a>
+  </div>
+</body>
+</html>
